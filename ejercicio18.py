@@ -7,20 +7,29 @@ Escriba una función que reciba un conjunto de palabras y devuelva un conjunto c
 
 
 
+def filtrar_y_ordenar(conjunto_palabras, letra):                                 # se define una función que toma dos argumentos: conjunto_palabras y letra
+    palabras_filtradas = set()                                                   # se inicializa un conjunto vacío que contendrá las palabras que contienen la letra especificada
 
-def filtrar_y_ordenar(conjunto_palabras, letra):
-    palabras_filtradas = set()
+    for palabra in conjunto_palabras:                                            # este bucle for itera sobre cada palabra en el conjunto de palabras dado
+        if letra in palabra:                                                     # se verifica si la letra especificada está presente en la palabra actual
+            palabras_filtradas.add(palabra)                                      # si la letra está presente la palabra se agrega al conjunto
 
-    for palabra in conjunto_palabras:
-        if letra in palabra:
-            palabras_filtradas.add(palabra)
-
-    palabras_ordenadas = sorted(palabras_filtradas, key=len, reverse=True)
-
-    return palabras_ordenadas
+    palabras_ordenadas = sorted(palabras_filtradas, key=len, reverse=True)       # se ordenan en orden descendente según su longitud utilizando la función sorted(). La palabra más larga aparecerá primero debido al parámetro key=len y reverse=True (que indica que se desea ordenar de mayor a menor longitud)
+    return palabras_ordenadas                                                    # la función devuelve una lista ordenada de las palabras
     
-
-conjunto_palabras = {"python", "programacion", "palabra", "sol", "hola"}
+conjunto_palabras = {"python", "programacion", "palabra", "sol", "hola"}         # se define un conjunto de palabras
 letra = "a"
 
-print(filtrar_y_ordenar(conjunto_palabras, letra))
+print(filtrar_y_ordenar(conjunto_palabras, letra))                               # se llama a la función pasando este conjunto y la letra "a" como argumentos y el resultado se imprime en la consola
+
+
+
+
+"""
+
+LA IMPRESION FINAL SERÁ:
+
+['programacion', 'palabra', 'hola']
+
+"""
+
