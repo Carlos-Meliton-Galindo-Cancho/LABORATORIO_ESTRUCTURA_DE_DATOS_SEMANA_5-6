@@ -13,7 +13,6 @@ def longitud_palabra(palabras, longitud=10):                                   #
             palabras_diez_a_mas_longitud.add(palabra)                          # si la longitud de la palabra cumple con el requisito, se agrega al conjunto
     return palabras_diez_a_mas_longitud                                        # finalmente la función devuelve el conjunto que contiene todas las palabras que tienen una longitud igual o mayor que la longitud especificada
 
-
 conjunto_palabras = {'hola mundo', 'programacion', 'naranja', 'negro'}         # aquí se crea un conjunto de palabras
 print(longitud_palabra(conjunto_palabras))                                     # se llama a la función pasando este conjunto como argumento y el resultado se imprime en la consola
 
